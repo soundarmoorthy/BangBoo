@@ -1,0 +1,16 @@
+  {
+    "name": "BangBoo",
+    "version": "1.0",
+    "description": "Downloads all the files in a given link. Also crawls through the sub pages and downlod files and store them in the disk retaining the hierarchial relationship. My primary intention to write this extensions is because Atlassian Bamboo doesn't support downloading the artifacts from builds. This plugin inserts an download artifacts button to the webpage you visit and on clicking the button, it will download links in the page. The same can be used from the artifacts page in bamboo, which will download all the generated artifacts in the folder structure they were created in the file system",
+    "permissions": [ "downloads","<all_urls>", "tabs", "background"],
+    "background" :
+    {
+	    "scripts" : ["background.js"]
+    },
+    "content_scripts":[
+	    {
+		    "js": ["jquery.js", "download.js"],
+		    "matches": ["http://*/*", "https://*/*"]
+	    }],
+    "manifest_version": 2
+  }
